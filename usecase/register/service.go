@@ -9,10 +9,6 @@ type RegisterService interface {
 	Register(user.User) error
 }
 
-type Repository interface {
-	Add(user.User) error
-}
-
 func NewService(r Repository) RegisterService {
 	return &registerService{repository: r}
 }
